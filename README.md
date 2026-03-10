@@ -2,7 +2,7 @@
 
 ## Descripción
 
-Proyecto de demostración para el curso **Github Actions**
+Proyecto de demostración para el curso **Github Actions** para DDIAA
 
 ## Tecnologías
 
