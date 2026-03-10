@@ -31,6 +31,6 @@ public class TaskItem
 public enum Priority
 {
     Low = 0,
-    Medium = 1
+    Medium = 1,
     High = 2
 }
