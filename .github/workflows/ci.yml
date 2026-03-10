@@ -1,0 +1,24 @@
+name: CI - Build
+
+on:
+  pull_request:
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Mensaje inicial
+        run: echo "Iniciando el proceso de CI para la rama main"
+
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+
+      - name: Verificar Version de .NET
+        run: dotnet --version
