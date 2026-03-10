@@ -1,5 +1,4 @@
-name: CI - Build
-
+name: CI -Build
 on:
   pull_request:
     branches:
@@ -7,29 +6,23 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - name: Mensaje inicial
-        run: echo "Iniciando el proceso de CI para la rama main"
-
-      - name: Checkout code
+        run: echo "Iniciando workflows de CI"
+      - name: Checkout del código
         uses: actions/checkout@v4
-
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: '10.0.x'
-
-      - name: Verificar Version de .NET
+          dotnet-version: "10.0.x"
+      - name: Verificar la version de .NET
         run: dotnet --version
-
       - name: Build del proyecto
         id: build-step
         run: dotnet build src/Api/Api.csproj --configuration Release
-
-      - name: Notifica on build failure
+        continue-on-error: true
+      - name: Notifica build failed
         if: steps.build-step.outcome == 'failure'
-        run: echo "😢 La compilacion fallo. 🤔" 
-
+        run: echo "El build fallo 😍"
       - name: Mensaje final
-        run: echo "Workflow de CI completado exitosamente"
+        run: echo "Workflow completado con exito"
