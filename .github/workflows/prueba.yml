@@ -12,3 +12,10 @@ jobs:
     steps:
       - name: Paso Hola Mundo
         run: echo "Te invito a mi primer culiacanazo en GitHub Actions"
+      - name: Debug
+        run: |
+          echo "Debugging information GITHUB_REF:${{github.ref}}"
+          echo "Debugging information GITHUB_SHA:${{github.sha}}"
+          echo "Debugging information RUNNER_OS:${{runner.os}}"
+          echo "Debugging information GITHUB_REPOSITORY:${{github.repository}}"
+          echo "Debugging information GITHUB_ACTOR:${{github.actor}}"
