@@ -22,3 +22,9 @@ jobs:
 
       - name: Verificar Version de .NET
         run: dotnet --version
+
+      - name: Build del proyecto
+        run: dotnet build src/Api/Api.csproj --configuration Release
+
+      - name: Mensaje final
+        run: echo "Workflow de CI completado exitosamente"
